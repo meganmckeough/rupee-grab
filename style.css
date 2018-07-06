@@ -14,22 +14,22 @@ h1 {
 	color: #1a1a1a;
 }
 
-.trees {
+.img-wrapper {
 	height: 90%;
-	width: 10%;
+	width: 100%;
 	display: flex;
 	align-items: flex-end;
 }
 
 .link {
-	width: 100%;
+	width: 8%;
 	height: auto;
+	transition: all 0.1s linear;
 }
 
-.trees .rupee {
-	width: 30%;
-	height: auto;
-	margin: 0 auto;
+.rupee {
+	width: auto;
+	height: 6%;
 }
 
 .score-timer {
@@ -37,24 +37,19 @@ h1 {
 	padding: 0 50px;
 }
 
-.score-timer .rupee {
+.rupee-score {
 	width: 20px;
 	height: auto;
 }
 
 .wrapper {
 	display: flex;
-	flex-direction: row;
 	height: 600px;
 }
 
-.one .link,
-.two .link,
-.three .link,
-.four .link,
-.five .link,
-.six .link {
-	transform: scaleX(-1);
+.rupee-wrapper {
+	height: 69px;
+	width: 57px;
 }
 
 .hidden {
