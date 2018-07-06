@@ -1,0 +1,62 @@
+body {
+	font-family: 'Press Start 2P', cursive;
+	background-image: url("images/Background.png");
+	background-position: bottom;
+}
+
+header {
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 10px 0;
+	color: #1a1a1a;
+}
+
+.trees {
+	height: 90%;
+	width: 10%;
+	display: flex;
+	align-items: flex-end;
+}
+
+.link {
+	width: 100%;
+	height: auto;
+}
+
+.trees .rupee {
+	width: 30%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.score-timer {
+	text-align: right;
+	padding: 0 50px;
+}
+
+.score-timer .rupee {
+	width: 20px;
+	height: auto;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	height: 600px;
+}
+
+.one .link,
+.two .link,
+.three .link,
+.four .link,
+.five .link,
+.six .link {
+	transform: scaleX(-1);
+}
+
+.hidden {
+	display: none;
+}
