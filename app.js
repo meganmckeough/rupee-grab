@@ -10,9 +10,9 @@ var rupeeCounter = document.querySelector(".score-counter span");
 var rupeeTimer = document.querySelector(".rupee-timer");
 
 var rupeesGrabbed = 0;
-var timer = 30;
+var seconds = 30;
 
-rupeeTimer.textContent = timer;
+rupeeTimer.textContent = seconds;
 
 function placeLink () {
 	imgLink.style.left = positionOnScreenLink + 'px';
@@ -26,9 +26,20 @@ function showScore () {
 	rupeeCounter.textContent = rupeesGrabbed;
 }
 
+function startTime () {
+	timerId = setInterval(updateTime, 1000);	
+}
+
+var updateTime = function () {
+	seconds = seconds - 1;
+	rupeeTimer.textContent = seconds;
+};
+
+
 placeLink();
 placeRupee();
 showScore();
+startTime();
 
 function randomPosition(element) {
 	var x = document.body.offsetWidth-element.clientWidth;
