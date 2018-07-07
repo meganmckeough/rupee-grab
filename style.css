@@ -42,12 +42,23 @@ h1 {
 
 .score-counter {
 	text-align: right;
-	padding: 0 50px;
+	padding: none;
 	font-size: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.rupee-timer {
+	margin: 0 auto;
 }
 
 .rupee-score {
-	width: 20px;
+	width: 20%;
+}
+
+.rupee-score img {
+	width: 10%;
 	height: auto;
 }
 

@@ -7,8 +7,12 @@ var positionOnScreenRupee = 400;
 var imgLink = document.querySelector(".link");
 var imgRupee = document.querySelector(".rupee-wrapper");
 var rupeeCounter = document.querySelector(".score-counter span");
+var rupeeTimer = document.querySelector(".rupee-timer");
 
 var rupeesGrabbed = 0;
+var timer = 30;
+
+rupeeTimer.textContent = timer;
 
 function placeLink () {
 	imgLink.style.left = positionOnScreenLink + 'px';
