@@ -28,13 +28,22 @@ h1 {
 }
 
 .rupee {
-	width: auto;
-	height: 6%;
+	height: auto;
+	width: 30%;
 }
 
-.score-timer {
+.rupee-wrapper {
+	height: 55px;
+	width: 8%;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.score-counter {
 	text-align: right;
 	padding: 0 50px;
+	font-size: 20px;
 }
 
 .rupee-score {
@@ -47,9 +56,8 @@ h1 {
 	height: 600px;
 }
 
-.rupee-wrapper {
-	height: 69px;
-	width: 57px;
+footer {
+	color: white;
 }
 
 .hidden {

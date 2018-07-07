@@ -2,10 +2,13 @@
 //randomise rupee position on screen
 // stop link on edge of screen
 
-var positionOnScreenLink = 300;
+var positionOnScreenLink = 500;
 var positionOnScreenRupee = 400;
 var imgLink = document.querySelector(".link");
-var imgRupee = document.querySelector(".rupee");
+var imgRupee = document.querySelector(".rupee-wrapper");
+var rupeeCounter = document.querySelector(".score-counter span");
+
+var rupeesGrabbed = 0;
 
 function placeLink () {
 	imgLink.style.left = positionOnScreenLink + 'px';
@@ -15,29 +18,55 @@ function placeRupee () {
 	imgRupee.style.left = positionOnScreenRupee + 'px';
 }
 
+function showScore () {
+	rupeeCounter.textContent = rupeesGrabbed;
+}
+
 placeLink();
 placeRupee();
+showScore();
+
+function randomPosition(element) {
+	var x = document.body.offsetWidth-element.clientWidth;
+	var randomX = Math.floor(Math.random()*x);
+	return randomX;
+}
+
+window.onload = function() {
+	var x = randomPosition(imgRupee);
+	imgRupee.style.left = x + 'px';
+}
+
+function moveRupee () {
+	var x = randomPosition(imgRupee);
+	imgRupee.style.left = x + 'px';
+}
+
+function grabRupee () {
+	rupeesGrabbed++;
+	showScore();
+	moveRupee();
+}
 
 function checkForGrab () {
 	var link = getPositionLink();
 	var rupee = getPositionRupee();
-	console.log(link, rupee);
-	if (link === rupee) {
-		alert("you got it!");
+	if (link > rupee - 11 && link < rupee) {
+		grabRupee();
 	}
 }
 
 function leftArrowPressed() {
 	imgLink.style.transform = 'scaleX(1)';
-    imgLink.style.left = (positionOnScreenLink - 10) + 'px';
-    positionOnScreenLink = positionOnScreenLink - 10;
+    imgLink.style.left = (positionOnScreenLink - 15) + 'px';
+    positionOnScreenLink = positionOnScreenLink - 15;
     checkForGrab();
 }
 
 function rightArrowPressed() {
 	imgLink.style.transform = 'scaleX(-1)';
-	imgLink.style.left = (positionOnScreenLink + 10) + 'px';
-	positionOnScreenLink = positionOnScreenLink + 10;
+	imgLink.style.left = (positionOnScreenLink + 15) + 'px';
+	positionOnScreenLink = positionOnScreenLink + 15;
 	checkForGrab();
 }
 
@@ -63,9 +92,6 @@ function getPositionRupee () {
 	var location = imgRupee.getBoundingClientRect();
 	return location.left;
 }
-
-// console.log(getPositionRupee());
-// console.log(getPositionLink());
 
 // var myRupees = document.querySelectorAll('.rupee');
 // var myLinks = document.querySelectorAll('.link');
