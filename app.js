@@ -7,7 +7,7 @@ var positionOnScreenRupee = 400;
 var imgLink = document.querySelector(".link");
 var imgRupee = document.querySelector(".rupee-wrapper");
 var rupeeCounter = document.querySelector(".score-counter span");
-var rupeeTimer = document.querySelector(".rupee-timer");
+var rupeeTimer = document.querySelector(".rupee-timer span");
 
 var rupeesGrabbed = 0;
 var seconds = 30;

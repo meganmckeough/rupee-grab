@@ -14,13 +14,6 @@ h1 {
 	color: #1a1a1a;
 }
 
-.img-wrapper {
-	height: 90%;
-	width: 100%;
-	display: flex;
-	align-items: flex-end;
-}
-
 .link {
 	width: 8%;
 	height: auto;
@@ -41,30 +34,28 @@ h1 {
 }
 
 .score-counter {
-	text-align: right;
-	padding: none;
 	font-size: 20px;
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-}
-
-.rupee-timer {
-	margin: 0 auto;
-}
-
-.rupee-score {
-	width: 20%;
+	align-self: flex-start;
+	color: white;
 }
 
 .rupee-score img {
-	width: 10%;
+	width: 15px;
 	height: auto;
 }
 
+/*.rupee-timer {
+	text-align: center;
+}*/
+
 .wrapper {
 	display: flex;
-	height: 600px;
+	height: 93vh;
+	width: 100vw;
+	display: flex;
+	align-items: flex-end;
 }
 
 footer {
