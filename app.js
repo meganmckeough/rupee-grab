@@ -1,14 +1,16 @@
-//randomise link position on screen
+// randomise link position on screen
 // stop link on edge of screen
 
 var positionOnScreenLink = 500;
 var positionOnScreenRupee = 400;
 var imgLink = document.querySelector(".link");
 var imgRupee = document.querySelector(".rupee-wrapper");
-var rupeeCounter = document.querySelector(".grabbed");
+var rupeeCounter = document.querySelector(".grabbed-count");
+var rupeeWin = document.querySelector(".grabbed-win");
 var rupeeSeconds = document.querySelector(".rupee-timer span");
 var rupeeTimer = document.querySelector(".rupee-timer")
 var startButton = document.querySelector(".start-button")
+var winScreen = document.querySelector(".win-screen")
 
 var rupeesGrabbed = 0;
 var seconds = 25;
@@ -42,6 +44,10 @@ var updateTime = function () {
 	rupeeSeconds.textContent = seconds;
 	if (seconds === 0) {
 		stopTime();
+		rupeeWin.textContent = rupeesGrabbed
+		setTimeout(function() { 
+			winScreen.classList.remove('hidden') 
+		}, 1000);
 	}
 };
 
@@ -49,7 +55,6 @@ var updateTime = function () {
 placeLink();
 placeRupee();
 showScore();
-// startTime();
 
 function randomPosition(element) {
 	var x = document.body.offsetWidth-element.clientWidth;
