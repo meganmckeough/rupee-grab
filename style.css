@@ -2,6 +2,7 @@ body {
 	font-family: 'Press Start 2P', cursive;
 	background-image: url("images/Background.png");
 	background-position: bottom;
+	background-repeat: repeat-x;
 }
 
 header {
@@ -35,10 +36,20 @@ h1 {
 
 .score-counter {
 	font-size: 20px;
+	width: 100vw;
 	display: flex;
 	justify-content: space-between;
 	align-self: flex-start;
+	flex-direction: column;
 	color: white;
+	text-align: center;
+}
+
+.arrows {
+	display: flex;
+	width: 100%;
+	color: black;
+	margin-top: 20px;
 }
 
 .rupee-score img {
@@ -46,9 +57,14 @@ h1 {
 	height: auto;
 }
 
-/*.rupee-timer {
-	text-align: center;
-}*/
+.rupee-timer {
+	margin-top: 60px;
+}
+
+.rupee-timer,
+.rupee-score {
+	padding: 10px 0;
+}
 
 .wrapper {
 	display: flex;
