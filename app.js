@@ -8,11 +8,10 @@ var imgRupee = document.querySelector(".rupee-wrapper");
 var rupeeCounter = document.querySelector(".grabbed");
 var rupeeSeconds = document.querySelector(".rupee-timer span");
 var rupeeTimer = document.querySelector(".rupee-timer")
+var startButton = document.querySelector(".start-button")
 
 var rupeesGrabbed = 0;
 var seconds = 25;
-
-rupeeSeconds.textContent = seconds;
 
 function placeLink () {
 	imgLink.style.left = positionOnScreenLink + 'px';
@@ -27,6 +26,8 @@ function showScore () {
 }
 
 function startTime () {
+	startButton.classList.add('hidden')
+	rupeeTimer.classList.remove('hidden')
 	rupeeSeconds.textContent = seconds;
 	timerId = setInterval(updateTime, 1000);	
 }
@@ -48,7 +49,7 @@ var updateTime = function () {
 placeLink();
 placeRupee();
 showScore();
-startTime();
+// startTime();
 
 function randomPosition(element) {
 	var x = document.body.offsetWidth-element.clientWidth;
@@ -95,16 +96,21 @@ function rightArrowPressed() {
 }
 
 function moveLink(event) {
-    switch (event.keyCode) {
-        case 37:
-        leftArrowPressed();
-        break;
-        case 39:
-        rightArrowPressed();
-        break;
-    }
+	if (seconds > 0 && seconds < 25) {
+
+		switch (event.keyCode) {
+	        case 37:
+	        leftArrowPressed();
+	        break;
+	        case 39:
+	        rightArrowPressed();
+	        break;
+	    }
+
+	}
+    
 };
-      
+ 
 window.addEventListener('keydown', moveLink);
 
 function getPositionLink () {
@@ -117,3 +123,4 @@ function getPositionRupee () {
 	return location.left;
 }
 
+startButton.addEventListener('click', startTime)

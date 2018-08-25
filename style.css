@@ -1,5 +1,5 @@
 body {
-	font-family: 'Press Start 2P', cursive;
+	font-family: 'Press Start 2P', serif;
 	background-image: url("images/Background.png");
 	background-position: bottom;
 	background-repeat: repeat-x;
@@ -13,6 +13,18 @@ h1 {
 	margin: 0;
 	padding: 10px 0;
 	color: #1a1a1a;
+}
+
+a {
+	color: white;
+}
+
+button {
+	margin: 40px auto;
+	background-color: white;
+	font-family: 'Press Start 2P', serif;
+	font-size: 20px;
+	padding: 0.5em;
 }
 
 .link {
@@ -50,6 +62,12 @@ h1 {
 	width: 100%;
 	color: black;
 	margin-top: 20px;
+	justify-content: space-between;
+}
+
+.arrow-left, 
+.arrow-right {
+	margin: 0 2em;
 }
 
 .rupee-score img {
