@@ -6,13 +6,14 @@ var positionOnScreenLink = 500;
 var positionOnScreenRupee = 400;
 var imgLink = document.querySelector(".link");
 var imgRupee = document.querySelector(".rupee-wrapper");
-var rupeeCounter = document.querySelector(".score-counter span");
-var rupeeTimer = document.querySelector(".rupee-timer span");
+var rupeeCounter = document.querySelector(".grabbed");
+var rupeeSeconds = document.querySelector(".rupee-timer span");
+var rupeeTimer = document.querySelector(".rupee-timer")
 
 var rupeesGrabbed = 0;
-var seconds = 30;
+var seconds = 20;
 
-rupeeTimer.textContent = seconds;
+rupeeSeconds.textContent = seconds;
 
 function placeLink () {
 	imgLink.style.left = positionOnScreenLink + 'px';
@@ -27,12 +28,21 @@ function showScore () {
 }
 
 function startTime () {
+	rupeeSeconds.textContent = seconds;
 	timerId = setInterval(updateTime, 1000);	
+}
+
+function stopTime() {
+    clearInterval(timerId);
+    rupeeTimer.textContent = 'Time\'s up!';
 }
 
 var updateTime = function () {
 	seconds = seconds - 1;
-	rupeeTimer.textContent = seconds;
+	rupeeSeconds.textContent = seconds;
+	if (seconds === 0) {
+		stopTime();
+	}
 };
 
 
