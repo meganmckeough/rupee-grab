@@ -16,3 +16,7 @@ Manage your expectations - this is an early adventure in Javascript, not CSS.
 Background artwork created by Eder Muniz (Free Pixel Art Forest).
 Link pixel art from [here](https://www.kisspng.com/png-link-16-bit-pixel-art-the-legend-of-zelda-8-bit-974814/).
 
+#### Bugs
+
+Still working to get the layout and responsiveness working for different screen sizes.
+
